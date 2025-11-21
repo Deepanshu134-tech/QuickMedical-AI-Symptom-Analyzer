@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Medical Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+
+<div class="main-container">
+    <header>
+        <h1>QuickMedical Ai</h1>
+    </header>
+    <main>
+        <div class="input-section">
+            <label for="symptom-input">PATIENT SYMPTOMS:</label>
+            <textarea id="symptom-input" placeholder="Example: I have a persistent dry cough, a headache, and a slight fever of 100.4°F for the last 3 days."></textarea>
+            <button id="analyze-button">Analyze Symptoms</button>
+        </div>
+        
+        <div id="results-container">
+            <div class="disclaimer">
+                <strong>Important:</strong> This is an AI-generated analysis and is not a substitute for professional medical advice. Please consult a healthcare provider for any health concerns.
+            </div>
+
+            <div id="loading-spinner" class="spinner"></div>
+
+            <section id="possible-conditions" class="result-section">
+                <h2>1. Possible Conditions</h2>
+                <ul id="conditions-list"></ul>
+            </section>
+
+            <section id="urgency-level" class="result-section">
+                <h2>2. Urgency Level (1-5 Scale)</h2>
+                <div id="urgency-level-display"></div>
+            </section>
+
+            <section id="immediate-actions" class="result-section">
+                <h2>3. Immediate Actions</h2>
+                <ul id="actions-list"></ul>
+            </section>
+
+            <section id="when-to-see-doctor" class="result-section">
+                <h2>4. When to See a Doctor</h2>
+                <ul id="triggers-list"></ul>
+            </section>
+
+            <section id="questions-for-doctor" class="result-section">
+                <h2>5. Questions for Your Doctor</h2>
+                <ul id="questions-list"></ul>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="../static/script.js"></script>
+
+</body>
+</html>

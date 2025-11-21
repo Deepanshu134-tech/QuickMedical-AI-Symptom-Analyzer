@@ -1,0 +1,262 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Root Variables for Theming --- */
+:root {
+    --primary-color-start: #4361ee;
+    --primary-color-end: #3a86ff;
+    --background-color-light: #f4f7f9;
+    --background-color-dark: #e9eef2;
+    --text-color: #34495e;
+    --text-color-light: #5f7a95;
+    --container-bg: #ffffff;
+    --border-color: #e1e8ed;
+    --shadow-color: rgba(67, 97, 238, 0.1);
+    --shadow-color-hover: rgba(67, 97, 238, 0.2);
+    --urgency-high: #d9534f;
+    --urgency-medium: #f0ad4e;
+    --urgency-low: #5cb85c;
+}
+
+/* --- General Body & Layout --- */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, var(--background-color-light), var(--background-color-dark));
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* --- Main Container Styling --- */
+.main-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--container-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+    border: 1px solid var(--border-color);
+}
+
+/* --- Header with Gradient --- */
+header {
+    background: linear-gradient(90deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--primary-color-start);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Main Content Area --- */
+main {
+    padding: 2.5rem;
+}
+
+/* --- Disclaimer Box --- */
+.disclaimer {
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-left: 5px solid #f0ad4e;
+    color: #8a6d3b;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+/* --- Enhanced Input Section --- */
+.input-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+#symptom-input {
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#symptom-input:focus {
+    outline: none;
+    border-color: var(--primary-color-start);
+    box-shadow: 0 0 0 4px var(--shadow-color);
+}
+
+/* --- Dynamic Analyze Button --- */
+#analyze-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(90deg, var(--primary-color-start), var(--primary-color-end));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+#analyze-button:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 25px var(--shadow-color-hover);
+}
+
+#analyze-button:active {
+    transform: translateY(-1px) scale(1.0);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+/* --- Stylish Results Section --- */
+#results-container {
+    display: block;
+    margin-top: 2.5rem;
+    min-height: 100px;
+}
+
+.result-section {
+    background-color: var(--background-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.result-section h2 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color-start);
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Optional: Add icons before h2 titles with a library like Font Awesome */
+.result-section h2::before {
+    /* content: '💡'; /* Example emoji icon */
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.result-section ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin: 0;
+}
+
+.result-section li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    color: var(--text-color-light);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.result-section li::before {
+    content: '✓'; /* Custom bullet point */
+    color: var(--urgency-low);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+/* --- Animated Urgency Display --- */
+#urgency-level-display {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    color: white;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Improved Loading Spinner --- */
+#loading-spinner {
+    display: none;
+    margin: 2rem auto;
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--primary-color-start);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s cubic-bezier(0.55, 0.09, 0.68, 0.53) infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Advanced Fade-in Animation for Results --- */
+.result-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Add a delay for staggered animations (requires JS to add classes sequentially) */
+.result-fade-in:nth-child(2) { animation-delay: 0.1s; }
+.result-fade-in:nth-child(3) { animation-delay: 0.2s; }
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.show-spinner {
+    display: block !important;
+}
+
+/* --- Responsive Design for Smaller Screens --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    main {
+        padding: 1.5rem;
+    }
+    header h1 {
+        font-size: 1.75rem;
+    }
+}
